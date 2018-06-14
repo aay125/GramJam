@@ -2,11 +2,46 @@
     text-align: center;
 }
 
-.button {
-    height: 20px;
+.button1 {
+    height: 50px;
     width: 100px;
-    margin: -20px -50px;
-    position: relative;
+    margin-left: -200px;
+    margin-top: -25px;
+    position: absolute;
     top: 50%;
-    left: 50%;
+    bottom: 50%;
+    background-color: aqua;
+}
+
+.button2 {
+    height: 50px;
+    width: 100px;
+    margin-left: -50px;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    background-color: aqua;
+}
+
+.button3 {
+    height: 50px;
+    width: 100px;
+    margin-left: 100px;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    background-color: aqua;
+}
+
+.text {
+    height: 50px;
+    width: 100px;
+    margin-left: -50px;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    color: aqua;
 }
