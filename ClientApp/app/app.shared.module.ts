@@ -9,6 +9,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { performanceComponent } from './components/performance/performance.component';
+import { ExecuteFormComponent } from './components/execute-form/execute-form.component';
+import { Step_planFormComponent } from './components/step_plan-form/step_plan-form.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +19,10 @@ import { CounterComponent } from './components/counter/counter.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        performanceComponent,
+        ExecuteFormComponent,
+        Step_planFormComponent
     ],
     imports: [
         CommonModule,
@@ -27,6 +33,9 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'execute', component: ExecuteFormComponent},
+            { path: 'performance', component: performanceComponent },
+            { path: 'step', component: Step_planFormComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
