@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "evalGramJam", "evalGramJam.csproj", "{66407F62-80DC-44EC-A09F-78419A847E81}"
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "evalGramJam", "evalGramJam.csproj", "{831D6833-49F9-4C28-A405-3ACBE4A5B50D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66407F62-80DC-44EC-A09F-78419A847E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66407F62-80DC-44EC-A09F-78419A847E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66407F62-80DC-44EC-A09F-78419A847E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66407F62-80DC-44EC-A09F-78419A847E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831D6833-49F9-4C28-A405-3ACBE4A5B50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831D6833-49F9-4C28-A405-3ACBE4A5B50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831D6833-49F9-4C28-A405-3ACBE4A5B50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831D6833-49F9-4C28-A405-3ACBE4A5B50D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
