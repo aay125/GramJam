@@ -1,5 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'formView',
@@ -11,9 +12,19 @@ export class FormViewComponent implements OnInit {
 
 
 
-    constructor(private user: UserService) {}
+    constructor(private _router: Router) { }
 
     ngOnInit() {
 
+    }
+
+    goEx(): void {
+        this._router.navigate(['/execute']);
+    }
+    goPerf(): void {
+        this._router.navigate(['/performance']);
+    }
+    goStep(): void {
+        this._router.navigate(['/step']);
     }
 }

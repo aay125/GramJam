@@ -15,13 +15,13 @@ export class HomeComponent implements OnInit {
         throw new Error("Method not implemented.");
     }
 
-    goEx(): void {
-        this._router.navigate(['/execute']);
-    }
-    goPerf(): void {
-        this._router.navigate(['/performance']);
-    }
-    goStep(): void {
-        this._router.navigate(['/step']);
-    }
+    //goEx(): void {
+    //    this._router.navigate(['/execute']);
+    //}
+    //goPerf(): void {
+    //    this._router.navigate(['/performance']);
+    //}
+    //goStep(): void {
+    //    this._router.navigate(['/step']);
+    //}
 }
