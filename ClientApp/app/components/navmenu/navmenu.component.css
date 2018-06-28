@@ -26,10 +26,12 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: orange;
+    color: black;
+    background-color: cyan;
 }
 
 .title {
+    font-size: 20px;
     background-color: darkcyan;
 }
 

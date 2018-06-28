@@ -1,10 +1,72 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>TEST</title>
-</head>
-<body>
-    <h1>TEST</h1>
-</body>
-</html>
+﻿<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form action="/action_page.php">
+                <h1 class="text-center">City of San Antonio</h1>
+                <h2 class="text-center">Employee Performance Evaluation</h2>
+                <h3 class="text-center pbot">Performance Pay Eligible</h3>
+                <div class="row">
+                    <div class="col-50">
+                        <label for="fname"><i class="fa fa-user"></i> Employee Name:</label>
+                        <input type="text" id="fname" name="firstname" placeholder="">
+                        <label for="email"><i class="fa fa-envelope"></i> Title:</label>
+                        <input type="text" id="email" name="email" placeholder="">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Department:</label>
+                        <select class="form-control" id="sel1">
+                            <option></option>
+                            <option>Human Resources</option>
+                            <option>Library</option>
+                            <option>Information Technology</option>
+                        </select>
+                        <br>
+                        <label for="city"><i class="fa fa-institution"></i> Review Type:</label>
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">
+                                    Planning
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">
+                                    Annual
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <label for="city"><i class="fa fa-institution"></i> Supervisor or Above? </label>
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">
+                                    Yes
+                                    <input type="radio" name="radio2">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">
+                                    No
+                                    <input type="radio" name="radio2">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <label for="fname">Employee SAP #:</label>
+                        <input type="text" id="cname" name="cardname" placeholder="">
+                        <label for="cname">Reporting Period: </label>
+                        <input type="text" id="cname" name="cardname" placeholder="">
+                        <label for="ccnum">Division</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

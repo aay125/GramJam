@@ -43,6 +43,8 @@ import { AuthguardGuard } from './authguard.guard';
             { path: 'step', component: Step_planFormComponent },
             { path: 'login', component: LoginComponent },
             { path: 'formView', canActivate: [AuthguardGuard], component: FormViewComponent },
+            //test path to forms page
+            { path: 'forms', component: FormViewComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
