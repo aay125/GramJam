@@ -6,6 +6,7 @@ import { Basic } from '../../models/basic_info';
 @Component({
     selector: 'app-basic_info-form',
     templateUrl: './basic_info-form.component.html',
+    styleUrls: ['./basic_info-form.component.css']
 })
 /** execute-form component*/
 export class Basic_infoFormComponent implements OnInit {
