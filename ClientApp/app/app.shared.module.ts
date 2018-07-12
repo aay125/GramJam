@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormViewComponent } from './components/formView/formView.component'
 import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
+import { BrowserModule } from '@angular/platform-browser';
+import { Basic_infoFormComponent } from './components/basic_info-form/basic_info-form.component';
 
 @NgModule({
     declarations: [
@@ -22,17 +24,17 @@ import { AuthguardGuard } from './authguard.guard';
         NavMenuComponent,
         LoginComponent,
         CounterComponent,
-        HomeComponent,
         performanceComponent,
         ExecuteFormComponent,
         Step_planFormComponent,
         FormViewComponent,
         HomeComponent,
+        Basic_infoFormComponent
     ],
     imports: [
+        BrowserModule,
         CommonModule,
         HttpModule,
-        FormsModule,
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
