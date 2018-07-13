@@ -33,7 +33,6 @@ export class Basic_infoFormComponent implements OnInit {
             name: 'John Doe',
             title: 'Manager',
             department: 'Information Technology',
-            period: '07/04/2018',
             division: 'Help Desk',
             reviewType: 'Planning',
             sapNum: '123456'

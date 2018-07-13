@@ -38,7 +38,7 @@
 }
 
 .container {
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
@@ -64,7 +64,7 @@ label {
     font-size: 24px;
 }
 
-.pbot{
+.pbot {
     padding-bottom: 20px;
 }
 
@@ -96,6 +96,7 @@ span.price {
     float: right;
     color: grey;
 }
+
 @media (max-width: 800px) {
     .row {
         flex-direction: column-reverse;
@@ -105,3 +106,21 @@ span.price {
         margin-bottom: 20px;
     }
 }
+
+.tcontent {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table.table-bordered {
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+    table.table-bordered > thead > tr > th {
+        border: 1px solid black;
+    }
+
+    table.table-bordered > tbody > tr > td {
+        border: 1px solid black;
+    }
