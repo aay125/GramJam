@@ -20,10 +20,10 @@
                                formControlName="name" />
                         <span class="help-block" *ngIf="(basicForm.get('name')?.touched || basicForm.get('name')?.dirty) && basicForm.get('name').errors">
                             <span *ngIf="basicForm.get('name').errors.required">
-                                Please enter your full name.
+                                Please enter your full name. <!--Error messages-->
                             </span>
                             <span *ngIf="basicForm.get('name').errors.minlength">
-                                Name must be longer than 3 characters.
+                                Name must be longer than 3 characters. <!--Error messages-->
                             </span>
                         </span>
                     </div>

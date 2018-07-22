@@ -32,7 +32,7 @@ export class Basic_infoFormComponent implements OnInit {
         this.basicForm.patchValue({
             name: 'John Doe',
             title: 'Manager',
-            department: 'Information Technology',
+            department: 'Information Technology', // drop down cell, doesn't populate
             division: 'Help Desk',
             reviewType: 'Planning',
             sapNum: '123456'
