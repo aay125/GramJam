@@ -52,9 +52,14 @@ export class Step_planFormComponent implements OnInit {
             reviewerComments: ['', [Validators.required, Validators.minLength(3)]],
             employeeComments: ['', [Validators.required, Validators.minLength(3)]],
             supervisorSignature: ['', [Validators.required, Validators.minLength(3)]],  //not sure what to do for these
+            supervisorDate: ['', [Validators.required, Validators.minLength(3)]], //manual data
+            supervisorSap: ['', [Validators.required, Validators.minLength(3)]],  //general validators
             officerSignature: ['', [Validators.required, Validators.minLength(3)]],     //not sure what to do for these
-            date: ['', [Validators.required, Validators.minLength(3)]], //manual data
-            sap: ['', [Validators.required, Validators.minLength(3)]],  //general validators
+            officerDate: ['', [Validators.required, Validators.minLength(3)]], //manual data
+            officerSap: ['', [Validators.required, Validators.minLength(3)]],  //general validators
+            employeeSignature: ['', [Validators.required, Validators.minLength(3)]],     //not sure what to do for these
+            employeeDate: ['', [Validators.required, Validators.minLength(3)]], //manual data
+            employeeSap: ['', [Validators.required, Validators.minLength(3)]]  //general validators
         });
     }
 
@@ -77,9 +82,14 @@ export class Step_planFormComponent implements OnInit {
              reviewerComments: 'Example Text Here',
              employeeComments: 'Example Text Here',
              supervisorSignature: 'Supervisor', 
+             supervisorDate: 'mm/dd/yyyy',
+             supervisorSap: '123456',
              officerSignature: 'Reviewing Officer',
-             date: 'mm/dd/yyyy',
-             sap: '123456'
+             officerDate: 'mm/dd/yyyy',
+             officerSap: '123456',
+             employeeSignature: 'Reviewing Officer',
+             employeeDate: 'mm/dd/yyyy',
+             employeeSap: '123456'
         });
     }
 
