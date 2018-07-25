@@ -19,9 +19,15 @@
         public reviewerComments = '',
         public employeeComments = '',
         public supervisorSignature = '', //make this a checkbox or radio button
+        public supervisorDate = '',
+        public supervisorSap = '',
         public officerSignature = '',
-        public date = '',
-        public sap = ''
+        public officerDate = '',
+        public officerSap = '',
+        public employeeSignature = '',
+        public employeeDate = '',
+        public employeeSap = ''
+        
         //there's more items to account for in this section but i'm not sure how to handle them
     ) { }
 }
