@@ -5,8 +5,12 @@
     /*align-items: center;*/
 }
 
-.tpad{
+.tpad {
     padding-top: 100px;
+}
+
+.bpad {
+    padding-top: 5%;
 }
 
 div.input {

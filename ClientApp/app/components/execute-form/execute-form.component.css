@@ -57,7 +57,10 @@ label {
     margin-bottom: 10px;
     display: block;
 }
-
+textarea{
+    width: 100%;
+    height: 100%;
+}
 .icon-container {
     margin-bottom: 20px;
     padding: 7px 0;
@@ -69,20 +72,10 @@ label {
 }
 
 .btn {
-    background-color: #4CAF50;
-    color: white;
     padding: 12px;
     margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
     cursor: pointer;
-    font-size: 17px;
 }
-
-    .btn:hover {
-        background-color: #45a049;
-    }
 
 a {
     color: #2196F3;
@@ -124,3 +117,30 @@ table.table-bordered {
     table.table-bordered > tbody > tr > td {
         border: 1px solid black;
     }
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+    .active, .collapsible:hover {
+        background-color: #555;
+    }
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+th {
+    background-color: #c8c8c8;
+} 
