@@ -5,5 +5,7 @@
     templateUrl: './performance.component.html',
     styleUrls: ['./performance.component.css']
 })
+
 export class performanceComponent {
+
 }

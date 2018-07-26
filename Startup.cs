@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using evalGramJam.Models;
+
+//using evalGramJam.Infrastructure.Data.Models;
+//using evalGramJam.Infrastructure.Data.Repositories;
+//using evalGramJam.Infrastructure.Data.Sql;
 
 namespace evalGramJam
 {
@@ -23,9 +26,10 @@ namespace evalGramJam
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddSingleton<ISqlConnectionFactory, MySqlConnectionFactory>();
+            //services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddMvc();
-            services.Add(new ServiceDescriptor(typeof(FormsDataBaseContext), new FormsDataBaseContext(Configuration.GetConnectionString
-                                                                                        (“DefaultConnection”))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,21 +45,21 @@ namespace evalGramJam
             }
             else
             {
-                app.UseExceptionHandler(“/ Home / Error”);
+                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
-            routes.MapRoute(
-                name: “default”,
-                template: “{ controller = Home}/{ action = Index}/{ id ?}“);
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
 
-            routes.MapSpaFallbackRoute(
-                name: “spa - fallback”,
-                defaults: new { controller = “Home”, action = “Index” });
-        });
-       }
-}
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
+            });
+        }
+    }
 }

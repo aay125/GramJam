@@ -16,6 +16,9 @@ import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { Basic_infoFormComponent } from './components/basic_info-form/basic_info-form.component';
+import { ListViewComponent } from './components/listView/listView.component';
+import { AppealFormComponent } from './components/appeal-form/appeal-form.component';
+import { SignatureComponent } from './components/signature/signature.component';
 
 @NgModule({
     declarations: [
@@ -25,9 +28,12 @@ import { Basic_infoFormComponent } from './components/basic_info-form/basic_info
         performanceComponent,
         ExecuteFormComponent,
         Step_planFormComponent,
+        AppealFormComponent,
         FormViewComponent,
         HomeComponent,
-        Basic_infoFormComponent
+        ListViewComponent,
+        Basic_infoFormComponent,
+        SignatureComponent
     ],
     imports: [
         BrowserModule,
@@ -41,10 +47,11 @@ import { Basic_infoFormComponent } from './components/basic_info-form/basic_info
             { path: 'execute', component: ExecuteFormComponent},
             { path: 'performance', component: performanceComponent },
             { path: 'step', component: Step_planFormComponent },
+            { path: 'appeal', component: AppealFormComponent },
             { path: 'login', component: LoginComponent },
-            { path: 'formView', canActivate: [AuthguardGuard], component: FormViewComponent },
-            //test path to forms page
+            { path: 'formView', component: FormViewComponent },
             { path: 'forms', component: FormViewComponent },
+            { path: 'listView', component: ListViewComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
