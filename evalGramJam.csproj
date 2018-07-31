@@ -28,11 +28,13 @@
     <None Remove="ClientApp\app\components\counter\counter.component.html" />
     <None Remove="ClientApp\app\components\fetchdata\fetchdata.component.html" />
     <None Remove="ClientApp\app\components\fetchdata\fetchdata.component.ts" />
+    <None Remove="ClientApp\app\components\performance\performance.ts" />
     <None Remove="ClientApp\app\components\step_plan-form\StepPayPlan.ts" />
     <None Remove="ClientApp\app\models\appeal-form.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\performance\performance.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\step_plan-form\StepPayPlan.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\appeal-form.ts" />
   </ItemGroup>
