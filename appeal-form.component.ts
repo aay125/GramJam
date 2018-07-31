@@ -1,6 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Appeal } from '../../models/appeal_info';
+
+import { Appeal } from './ClientApp/app/models/appeal-form'; //imports the appeal model properly (this was breaking the project earlier) also I created this class file in the models folder
+
+
 @Component({
     selector: 'appeal-form',
     templateUrl: './appeal-form.component.html',
