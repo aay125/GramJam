@@ -2,15 +2,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
-}
-
-.tpad {
-    padding-top: 100px;
-}
-
-.bpad {
-    padding-top: 5%;
+    align-items: center;
 }
 
 div.input {

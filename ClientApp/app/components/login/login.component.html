@@ -1,4 +1,4 @@
-﻿<form class="tpad" (submit)="loginUser($event)">
+﻿<form (submit)="loginUser($event)">
     <div class="input">
         <label>Username</label>
         <input type="text">
@@ -7,7 +7,7 @@
         <label>Password</label>
         <input type="password">
     </div>
-    <div class="bpad">
-        <a class="btn btn-default btn-lg"> Login </a>
+    <div class="input">
+        <input type="submit" value="Login">
     </div>
 </form>

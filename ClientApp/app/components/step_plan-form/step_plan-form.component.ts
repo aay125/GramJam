@@ -1,8 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { StepPayPlan } from './StepPayPlan'; //our data model
-
 @Component({
     selector: 'app-step_plan-form', //leave these as is for now (rename later)
     templateUrl: './step_plan-form.component.html',
@@ -11,7 +9,6 @@ import { StepPayPlan } from './StepPayPlan'; //our data model
 
 export class Step_planFormComponent implements OnInit {
     stepPayPlanForm: FormGroup; // root formgroup property
-    stepModel: StepPayPlan = new StepPayPlan(); // data model
 
     constructor(private fb: FormBuilder) { } // so we can inject the FormBuilder service
 

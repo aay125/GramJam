@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "evalGramJam", "evalGramJam.csproj", "{831D6833-49F9-4C28-A405-3ACBE4A5B50D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "evalGramJam", "evalGramJam.csproj", "{831D6833-49F9-4C28-A405-3ACBE4A5B50D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
