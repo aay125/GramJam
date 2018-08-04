@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { performanceComponent } from './components/performance/performance.component';
+import { PerformanceComponent } from './components/performance/performance.component';
 import { ExecuteFormComponent } from './components/execute-form/execute-form.component';
 import { Step_planFormComponent } from './components/step_plan-form/step_plan-form.component';
 import { LoginComponent } from './components/login/login.component';
@@ -25,12 +25,12 @@ import { SignatureComponent } from './components/signature/signature.component';
         AppComponent,
         NavMenuComponent,
         LoginComponent,
-        performanceComponent,
         ExecuteFormComponent,
         Step_planFormComponent,
         AppealFormComponent,
         FormViewComponent,
         HomeComponent,
+        PerformanceComponent,
         ListViewComponent,
         Basic_infoFormComponent,
         SignatureComponent
@@ -45,7 +45,7 @@ import { SignatureComponent } from './components/signature/signature.component';
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'execute', component: ExecuteFormComponent},
-            { path: 'performance', component: performanceComponent },
+            { path: 'performance', component: PerformanceComponent },
             { path: 'step', component: Step_planFormComponent },
             { path: 'appeal', component: AppealFormComponent },
             { path: 'login', component: LoginComponent },

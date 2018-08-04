@@ -34,26 +34,19 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\counter\counter.component.html" />
     <None Remove="ClientApp\app\components\fetchdata\fetchdata.component.html" />
-<<<<<<< Updated upstream
     <None Remove="ClientApp\app\components\fetchdata\fetchdata.component.ts" />
     <None Remove="ClientApp\app\components\performance\performance.ts" />
-    <None Remove="ClientApp\app\components\step_plan-form\StepPayPlan.ts" />
     <None Remove="ClientApp\app\models\appeal-form.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\performance\performance.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\step_plan-form\StepPayPlan.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\performance\performance.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\appeal-form.ts" />
-=======
     <None Remove="ClientApp\app\components\fetchdata\fetchdata.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\step_plan-form\StepPayPlan.ts" />     </ItemGroup>
-  <ItemGroup>
     <Folder Include="ClientApp\app\components\appeal-form\" />
->>>>>>> Stashed changes
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
