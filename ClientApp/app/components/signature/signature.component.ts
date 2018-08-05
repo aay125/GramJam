@@ -1,6 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { Signature } from './signature'; //model class
+import { DateValidator } from '../../shared/DateValidation'; //custom date validation
+
 @Component({
     selector: 'app-signature',
     templateUrl: './signature.component.html',
@@ -9,29 +12,35 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 /** signature component*/
 export class SignatureComponent implements OnInit {
     signatureForm: FormGroup;
+    signatureModel: Signature = new Signature();
 
     constructor(private fb: FormBuilder) { }
 
     ngOnInit(): void {
         this.signatureForm = this.fb.group({
-            name: ['', [Validators.required, Validators.minLength(3)]],
-            title: ['', [Validators.required, Validators.minLength(3)]],
-            department: ['', [Validators.required, Validators.minLength(3)]],
-            period: ['', [Validators.required, Validators.minLength(3)]],
-            division: ['', [Validators.required, Validators.minLength(3)]],
-            reviewType: ['', [Validators.required, Validators.minLength(3)]],
-            sapNum: ['', [Validators.required, Validators.minLength(3)]]
+            supervisorSignature: ['', [Validators.required, Validators.minLength(3)]],
+            supervisorDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], 
+            supervisorSap: ['', [Validators.required, Validators.min(6), Validators.max(6)]], //sap # have to be exactly 6 digits
+            officerSignature: ['', [Validators.required, Validators.minLength(3)]],
+            officerDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
+            officerSap: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
+            employeeSignature: ['', [Validators.required, Validators.minLength(3)]],
+            employeeDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]]
+            
         });
     }
 
     populateTestData(): void {
         this.signatureForm.patchValue({
-            name: 'John Doe',
-            title: 'Manager',
-            department: 'Information Technology', // drop down cell, doesn't populate
-            division: 'Help Desk',
-            reviewType: 'Planning',
-            sapNum: '123456'
+            supervisorSignature: 'Supervisor',
+            supervisorDate: '08/30/2018',
+            supervisorSap: '123456',
+            officerSignature: 'Officer',
+            officerDate: '08/30/2018', 
+            officerSap: '987654',
+            employeeSignature: 'Employee',
+            employeeDate: '08/30/2018'
+
         });
     }
 
