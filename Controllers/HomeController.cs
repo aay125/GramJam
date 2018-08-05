@@ -9,6 +9,8 @@ namespace evalGramJam.Controllers
 {
     public class HomeController : Controller
     {
+        //private readonly IUserRepository _userRepository;
+
         public IActionResult Index()
         {
             return View();
@@ -19,5 +21,11 @@ namespace evalGramJam.Controllers
             ViewData["RequestId"] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
             return View();
         }
+
+        //public IActionResult GetUsers() 
+        //{
+        //    var users = _userRepository.GetFirstUser();
+        //    return View(users);
+        //}
     }
 }

@@ -1,18 +1,4 @@
-﻿/*
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'performance',
-    templateUrl: './performance.component.html',
-    styleUrls: ['./performance.component.css']
-})
-
-export class performanceComponent {
-
-}
-*/
-
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
@@ -21,7 +7,7 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
     styleUrls: ['./performance.component.css']
 })
 /** execute-form component*/
-export class performanceComponent implements OnInit {
+export class PerformanceComponent implements OnInit {
     /** execute-form ctor */
     performanceForm: FormGroup;
     get section2(): FormArray {
