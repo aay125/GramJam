@@ -45,14 +45,14 @@ export class Step_planFormComponent implements OnInit {
             //sectionV
             reviewerComments: ['', [Validators.required, Validators.minLength(3)]],
             employeeComments: ['', [Validators.required, Validators.minLength(3)]],
-
+            
             //Signature section
             supervisorSignature: ['', [Validators.required, Validators.minLength(3)]],
             supervisorDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
-            supervisorSap: ['', [Validators.required, Validators.min(6), Validators.max(6)]], //sap # have to be exactly 6 digits
+            supervisorSap: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]], //sap # have to be exactly 6 digits
             officerSignature: ['', [Validators.required, Validators.minLength(3)]],
             officerDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
-            officerSap: ['', [Validators.required, Validators.min(6), Validators.max(6)]],
+            officerSap: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]],
             employeeSignature: ['', [Validators.required, Validators.minLength(3)]],
             employeeDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]]
            
@@ -89,7 +89,7 @@ export class Step_planFormComponent implements OnInit {
             //Section V
             reviewerComments: 'Example Comments Here',
             employeeComments: 'Example Comments Here',
-
+            
             //signature section
             supervisorSignature: 'Supervisor',
             supervisorDate: '08/30/2018',

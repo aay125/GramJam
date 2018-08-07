@@ -60,26 +60,26 @@
 
                                     <!--DEPARTMENT FIELD -->
                                     <!--<div class="form-group"
-                     [ngClass]="{'has-error': (stepPayPlanForm.get('department')?.touched || stepPayPlanForm.get('department')?.dirty) && !stepPayPlanForm.get('department').valid }">
-                    <label class="control-label"
-                           for="departmentId">
-                        Department
-                    </label>
+                                         [ngClass]="{'has-error': (stepPayPlanForm.get('department')?.touched || stepPayPlanForm.get('department')?.dirty) && !stepPayPlanForm.get('department').valid }">
+                                        <label class="control-label"
+                                               for="departmentId">
+                                            Department
+                                        </label>
 
-                    <input class="form-control"
-                           id="departmentId"
-                           type="text"
-                           placeholder="Department (required)"
-                           formControlName="department" />
-                    <span class="help-block" *ngIf="(stepPayPlanForm.get('department')?.touched || stepPayPlanForm.get('department')?.dirty) && stepPayPlanForm.get('department').errors">
-                        <span *ngIf="stepPayPlanForm.get('department').errors.required">
-                            Please enter your department.
-                        </span>
-                        <span *ngIf="stepPayPlanForm.get('department').errors.minlength">
-                            Department must be longer than 3 characters.
-                        </span>
-                    </span>
-                </div>-->
+                                        <input class="form-control"
+                                               id="departmentId"
+                                               type="text"
+                                               placeholder="Department (required)"
+                                               formControlName="department" />
+                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('department')?.touched || stepPayPlanForm.get('department')?.dirty) && stepPayPlanForm.get('department').errors">
+                                            <span *ngIf="stepPayPlanForm.get('department').errors.required">
+                                                Please enter your department.
+                                            </span>
+                                            <span *ngIf="stepPayPlanForm.get('department').errors.minlength">
+                                                Department must be longer than 3 characters.
+                                            </span>
+                                        </span>
+                                    </div>-->
                                     <!--DEPARTMENT FIELD -->
                                     <label for="adr"><i class="fa fa-address-card-o"></i> Department:</label>
                                     <select class="form-control" id="sel1">
@@ -126,26 +126,26 @@
                                     </div>
                                     <!--REVIEW TYPE FIELD -->
                                     <!--<div class="form-group"
-                     [ngClass]="{'has-error': (stepPayPlanForm.get('reviewType')?.touched || stepPayPlanForm.get('reviewType')?.dirty) && !stepPayPlanForm.get('reviewType').valid }">
-                    <label class="control-label"
-                           for="reviewTypeId">
-                        Review Type
-                    </label>
+                                         [ngClass]="{'has-error': (stepPayPlanForm.get('reviewType')?.touched || stepPayPlanForm.get('reviewType')?.dirty) && !stepPayPlanForm.get('reviewType').valid }">
+                                        <label class="control-label"
+                                               for="reviewTypeId">
+                                            Review Type
+                                        </label>
 
-                    <input class="form-control"
-                           id="reviewTypeId"
-                           type="text"
-                           placeholder="Review Type (required)"
-                           formControlName="reviewType" />
-                    <span class="help-block" *ngIf="(stepPayPlanForm.get('reviewType')?.touched || stepPayPlanForm.get('reviewType')?.dirty) && stepPayPlanForm.get('reviewType').errors">
-                        <span *ngIf="stepPayPlanForm.get('reviewType').errors.required">
-                            Please enter the review type.
-                        </span>
-                        <span *ngIf="stepPayPlanForm.get('reviewType').errors.minlength">
-                            Review type must be longer than 3 characters.
-                        </span>
-                    </span>
-                </div>-->
+                                        <input class="form-control"
+                                               id="reviewTypeId"
+                                               type="text"
+                                               placeholder="Review Type (required)"
+                                               formControlName="reviewType" />
+                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('reviewType')?.touched || stepPayPlanForm.get('reviewType')?.dirty) && stepPayPlanForm.get('reviewType').errors">
+                                            <span *ngIf="stepPayPlanForm.get('reviewType').errors.required">
+                                                Please enter the review type.
+                                            </span>
+                                            <span *ngIf="stepPayPlanForm.get('reviewType').errors.minlength">
+                                                Review type must be longer than 3 characters.
+                                            </span>
+                                        </span>
+                                    </div>-->
                                     <br>
                                 </div>
                                 <!--SECOND ROW OF CONTENT-->
@@ -239,11 +239,11 @@
                                             achievement.
                                         </td>
                                         <!-- (not in the step pay plan form) <td>
-                     Far exceeds the requirements of the
-                     job, task or project. Performance
-                     consistently shows outstanding
-                     achievement far above expectations.
-                    </td> -->
+                                         Far exceeds the requirements of the
+                                         job, task or project. Performance
+                                         consistently shows outstanding
+                                         achievement far above expectations.
+                                        </td> -->
                                     </tr>
                                 </tbody>
                             </table>
@@ -718,7 +718,7 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            Reviewer Comments
+                                            Comments
                                         </th>
                                     </tr>
                                 </thead>
@@ -730,6 +730,7 @@
                                                  [ngClass]="{'has-error': (stepPayPlanForm.get('reviewerComments')?.touched || stepPayPlanForm.get('reviewerComments')?.dirty) && !stepPayPlanForm.get('reviewerComments').valid }">
                                                 <label class="control-label"
                                                        for="reviewerCommentsId">
+                                                    Reviewer Comments
                                                 </label>
                                                 <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
                                                 <textarea class="form-control"
@@ -778,261 +779,259 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <!--Signature Section-->
-                            <div class="row">
-                                <!--FIRST ROW OF CONTENT-->
-                                <div class="col-75 table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <!--SupervisorSignature-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorSignature')?.touched || stepPayPlanForm.get('supervisorSignature')?.dirty) && !stepPayPlanForm.get('supervisorSignature').valid }">
-                                                        <label class="control-label"
-                                                               for="supervisorSignatureId">
-                                                            Supervisor/Manager Signature
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="supervisorSignatureId"
-                                                               type="text"
-                                                               placeholder="Full Name (required)"
-                                                               formControlName="supervisorSignature" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorSignature')?.touched || stepPayPlanForm.get('supervisorSignature')?.dirty) && stepPayPlanForm.get('supervisorSignature').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorSignature').errors.required">
-                                                                Supervisor's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorSignature').errors.minlength">
-                                                                <!--NOTE: pay close attention to each form control's validators-->
-                                                                Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <!--supervisorDate-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorDate')?.touched || stepPayPlanForm.get('supervisorDate')?.dirty) && !stepPayPlanForm.get('supervisorDate').valid }">
-                                                        <label class="control-label"
-                                                               for="supervisorDateId">
-                                                            Date:
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="supervisorDateId"
-                                                               type="text"
-                                                               placeholder="mm/dd/yyyy"
-                                                               formControlName="supervisorDate" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorDate')?.touched || stepPayPlanForm.get('supervisorDate')?.dirty) && stepPayPlanForm.get('supervisorDate').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.required">
-                                                                Please enter the signed date.
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.minlength">
-                                                                Too few characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.maxlength">
-                                                                Too many characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-
-
-                                                <!--supervisorSap-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorSap')?.touched || stepPayPlanForm.get('supervisorSap')?.dirty) && !stepPayPlanForm.get('supervisorSap').valid }">
-                                                        <label class="control-label"
-                                                               for="supervisorSapId">
-                                                            SAP #:
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="supervisorSapId"
-                                                               type="text"
-                                                               placeholder="SAP #"
-                                                               formControlName="supervisorSap" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorSap')?.touched || stepPayPlanForm.get('supervisorSap')?.dirty) && stepPayPlanForm.get('supervisorSap').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.required">
-                                                                Supervisor's SAP # required
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.min">
-                                                                Too few digits, must contain 6 digits
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.max">
-                                                                Too many digits, must contain 6 digits
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!--Reviewing Officer-->
-                                            <tr>
-                                                <!--OfficerSignature-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('officerSignature')?.touched || stepPayPlanForm.get('officerSignature')?.dirty) && !stepPayPlanForm.get('officerSignature').valid }">
-                                                        <label class="control-label"
-                                                               for="officerSignatureId">
-                                                            Reviewing Officer Signature
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="officerSignatureId"
-                                                               type="text"
-                                                               placeholder="Full Name (required)"
-                                                               formControlName="officerSignature" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('officerSignature')?.touched || stepPayPlanForm.get('officerSignature')?.dirty) && stepPayPlanForm.get('officerSignature').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('officerSignature').errors.required">
-                                                                Reviewing Officer's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('officerSignature').errors.minlength">
-                                                                <!--NOTE: pay close attention to each form control's validators-->
-                                                                Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <!--officerDate-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('officerDate')?.touched || stepPayPlanForm.get('officerDate')?.dirty) && !stepPayPlanForm.get('officerDate').valid }">
-                                                        <label class="control-label"
-                                                               for="officerDateId">
-                                                            Date:
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="officerDateId"
-                                                               type="text"
-                                                               placeholder="mm/dd/yyyy"
-                                                               formControlName="officerDate" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('officerDate')?.touched || stepPayPlanForm.get('officerDate')?.dirty) && stepPayPlanForm.get('officerDate').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('officerDate').errors.required">
-                                                                Please enter the signed date.
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('officerDate').errors.minlength">
-                                                                Too few characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('officerDate').errors.maxlength">
-                                                                Too many characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <!--officerSap-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('officerSap')?.touched || stepPayPlanForm.get('officerSap')?.dirty) && !stepPayPlanForm.get('officerSap').valid }">
-                                                        <label class="control-label"
-                                                               for="officerSapId">
-                                                            SAP #:
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="officerSapId"
-                                                               type="text"
-                                                               placeholder="SAP #"
-                                                               formControlName="officerSap" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('officerSap')?.touched || stepPayPlanForm.get('officerSap')?.dirty) && stepPayPlanForm.get('officerSap').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('officerSap').errors.required">
-                                                                Reviewing Officer's SAP # required
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('officerSap').errors.min">
-                                                                Too few digits, must contain 6 digits
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('officerSap').errors.max">
-                                                                Too many digits, must contain 6 digits
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!--EMPLOYEE SIGNATURE-->
-                                            <tr>
-                                                <!--employeeSignature-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('employeeSignature')?.touched || stepPayPlanForm.get('employeeSignature')?.dirty) && !stepPayPlanForm.get('employeeSignature').valid }">
-                                                        <label class="control-label"
-                                                               for="employeeSignatureId">
-                                                            Employee Signature
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="employeeSignatureId"
-                                                               type="text"
-                                                               placeholder="Full Name (required)"
-                                                               formControlName="employeeSignature" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('employeeSignature')?.touched || stepPayPlanForm.get('employeeSignature')?.dirty) && stepPayPlanForm.get('employeeSignature').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('employeeSignature').errors.required">
-                                                                Employee's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('employeeSignature').errors.minlength">
-                                                                <!--NOTE: pay close attention to each form control's validators-->
-                                                                Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <!--employeeDate-->
-                                                <td>
-                                                    <div class="form-group"
-                                                         [ngClass]="{'has-error': (stepPayPlanForm.get('employeeDate')?.touched || stepPayPlanForm.get('employeeDate')?.dirty) && !stepPayPlanForm.get('employeeDate').valid }">
-                                                        <label class="control-label"
-                                                               for="employeeDateId">
-                                                            Date:
-                                                        </label>
-                                                        <input class="form-control"
-                                                               id="employeeDateId"
-                                                               type="text"
-                                                               placeholder="mm/dd/yyyy"
-                                                               formControlName="employeeDate" />
-                                                        <span class="help-block" *ngIf="(stepPayPlanForm.get('employeeDate')?.touched || stepPayPlanForm.get('employeeDate')?.dirty) && stepPayPlanForm.get('employeeDate').errors">
-                                                            <span *ngIf="stepPayPlanForm.get('employeeDate').errors.required">
-                                                                Please enter the signed date.
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('employeeDate').errors.minlength">
-                                                                Too few characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                            <span *ngIf="stepPayPlanForm.get('employeeDate').errors.maxlength">
-                                                                Too many characters, please use the following format: mm/dd/yyyy
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!--Overall Rating-->
-                                <div class="col-25">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">Overall Rating</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="wrap">
-                                                    4 - Outstanding
-                                                    3 - Exceeds Expectations
-                                                    2 - Achieves Expectations
-                                                    1 - Improvement Needed
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <label for="sel1">Select list:</label>
-                                                        <select class="form-control" id="sel1">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <!-- Section VI: Signature Block-->
+                            <header style="font-weight: bold">Section VI: Signatures</header>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Signatures
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--SupervisorSignature-->
+                                    <tr>
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorSignature')?.touched || stepPayPlanForm.get('supervisorSignature')?.dirty) && !stepPayPlanForm.get('supervisorSignature').valid }">
+                                                <label class="control-label"
+                                                       for="supervisorSignatureId">
+                                                    Supervisor/Manager Signature
+                                                </label>
+                                                <input class="form-control"
+                                                       id="supervisorSignatureId"
+                                                       type="text"
+                                                       placeholder="Full Name (required)"
+                                                       formControlName="supervisorSignature" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorSignature')?.touched || stepPayPlanForm.get('supervisorSignature')?.dirty) && stepPayPlanForm.get('supervisorSignature').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorSignature').errors.required">
+                                                        Supervisor's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorSignature').errors.minlength">
+                                                        <!--NOTE: pay close attention to each form control's validators-->
+                                                        Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <!--supervisorDate-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorDate')?.touched || stepPayPlanForm.get('supervisorDate')?.dirty) && !stepPayPlanForm.get('supervisorDate').valid }">
+                                                <label class="control-label"
+                                                       for="supervisorDateId">
+                                                    Date:
+                                                </label>
+                                                <input class="form-control"
+                                                       id="supervisorDateId"
+                                                       type="text"
+                                                       placeholder="mm/dd/yyyy"
+                                                       formControlName="supervisorDate" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorDate')?.touched || stepPayPlanForm.get('supervisorDate')?.dirty) && stepPayPlanForm.get('supervisorDate').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.required">
+                                                        Please enter the signed date.
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.minlength">
+                                                        Too few characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorDate').errors.maxlength">
+                                                        Too many characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <!--supervisorSap-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('supervisorSap')?.touched || stepPayPlanForm.get('supervisorSap')?.dirty) && !stepPayPlanForm.get('supervisorSap').valid }">
+                                                <label class="control-label"
+                                                       for="supervisorSapId">
+                                                    SAP #:
+                                                </label>
+                                                <input class="form-control"
+                                                       id="supervisorSapId"
+                                                       type="text"
+                                                       placeholder="SAP #"
+                                                       formControlName="supervisorSap" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('supervisorSap')?.touched || stepPayPlanForm.get('supervisorSap')?.dirty) && stepPayPlanForm.get('supervisorSap').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.required">
+                                                        Supervisor's SAP # required
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.minlength">
+                                                        Too few digits, must contain 6 digits
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('supervisorSap').errors.maxlength">
+                                                        Too many digits, must contain 6 digits
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--Reviewing Officer-->
+                                    <tr>
+                                        <!--OfficerSignature-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('officerSignature')?.touched || stepPayPlanForm.get('officerSignature')?.dirty) && !stepPayPlanForm.get('officerSignature').valid }">
+                                                <label class="control-label"
+                                                       for="officerSignatureId">
+                                                    Reviewing Officer Signature
+                                                </label>
+                                                <input class="form-control"
+                                                       id="officerSignatureId"
+                                                       type="text"
+                                                       placeholder="Full Name (required)"
+                                                       formControlName="officerSignature" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('officerSignature')?.touched || stepPayPlanForm.get('officerSignature')?.dirty) && stepPayPlanForm.get('officerSignature').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('officerSignature').errors.required">
+                                                        Reviewing Officer's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('officerSignature').errors.minlength">
+                                                        <!--NOTE: pay close attention to each form control's validators-->
+                                                        Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <!--officerDate-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('officerDate')?.touched || stepPayPlanForm.get('officerDate')?.dirty) && !stepPayPlanForm.get('officerDate').valid }">
+                                                <label class="control-label"
+                                                       for="officerDateId">
+                                                    Date:
+                                                </label>
+                                                <input class="form-control"
+                                                       id="officerDateId"
+                                                       type="text"
+                                                       placeholder="mm/dd/yyyy"
+                                                       formControlName="officerDate" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('officerDate')?.touched || stepPayPlanForm.get('officerDate')?.dirty) && stepPayPlanForm.get('officerDate').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('officerDate').errors.required">
+                                                        Please enter the signed date.
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('officerDate').errors.minlength">
+                                                        Too few characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('officerDate').errors.maxlength">
+                                                        Too many characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <!--officerSap-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('officerSap')?.touched || stepPayPlanForm.get('officerSap')?.dirty) && !stepPayPlanForm.get('officerSap').valid }">
+                                                <label class="control-label"
+                                                       for="officerSapId">
+                                                    SAP #:
+                                                </label>
+                                                <input class="form-control"
+                                                       id="officerSapId"
+                                                       type="text"
+                                                       placeholder="SAP #"
+                                                       formControlName="officerSap" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('officerSap')?.touched || stepPayPlanForm.get('officerSap')?.dirty) && stepPayPlanForm.get('officerSap').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('officerSap').errors.required">
+                                                        Reviewing Officer's SAP # required
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('officerSap').errors.minlength">
+                                                        Too few digits, must contain 6 digits
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('officerSap').errors.maxlength">
+                                                        Too many digits, must contain 6 digits
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--EMPLOYEE SIGNATURE-->
+                                    <tr>
+                                        <!--employeeSignature-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('employeeSignature')?.touched || stepPayPlanForm.get('employeeSignature')?.dirty) && !stepPayPlanForm.get('employeeSignature').valid }">
+                                                <label class="control-label"
+                                                       for="employeeSignatureId">
+                                                    Employee Signature
+                                                </label>
+                                                <input class="form-control"
+                                                       id="employeeSignatureId"
+                                                       type="text"
+                                                       placeholder="Full Name (required)"
+                                                       formControlName="employeeSignature" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('employeeSignature')?.touched || stepPayPlanForm.get('employeeSignature')?.dirty) && stepPayPlanForm.get('employeeSignature').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('employeeSignature').errors.required">
+                                                        Employee's signature required <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('employeeSignature').errors.minlength">
+                                                        <!--NOTE: pay close attention to each form control's validators-->
+                                                        Please enter at least 3 characters.  <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <!--employeeDate-->
+                                        <td>
+                                            <div class="form-group"
+                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('employeeDate')?.touched || stepPayPlanForm.get('employeeDate')?.dirty) && !stepPayPlanForm.get('employeeDate').valid }">
+                                                <label class="control-label"
+                                                       for="employeeDateId">
+                                                    Date:
+                                                </label>
+                                                <input class="form-control"
+                                                       id="employeeDateId"
+                                                       type="text"
+                                                       placeholder="mm/dd/yyyy"
+                                                       formControlName="employeeDate" />
+                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('employeeDate')?.touched || stepPayPlanForm.get('employeeDate')?.dirty) && stepPayPlanForm.get('employeeDate').errors">
+                                                    <span *ngIf="stepPayPlanForm.get('employeeDate').errors.required">
+                                                        Please enter the signed date.
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('employeeDate').errors.minlength">
+                                                        Too few characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                    <span *ngIf="stepPayPlanForm.get('employeeDate').errors.maxlength">
+                                                        Too many characters, please use the following format: mm/dd/yyyy
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Section VII: Overall Rating Block-->
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Overall Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="wrap">
+                                            4 - Outstanding
+                                            3 - Exceeds Expectations
+                                            2 - Achieves Expectations
+                                            1 - Improvement Needed
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label for="sel1">Select list:</label>
+                                                <select class="form-control" id="sel1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Agree/Disagree -->
                             <div class="row tcontent">
                                 <table class="table table-bordered">
                                     <thead>
@@ -1059,8 +1058,7 @@
                                     </tbody>
                                 </table>
                             </div>
-
-                        </div>
+                        </div> <!--div class=t-content-->
                         <!--BUTTON GROUP-->
                         <div class="form-group btgroup">
                             <button class="btn btn-primary"
@@ -1080,4 +1078,3 @@
         </div>
     </div>
 </div>
-
