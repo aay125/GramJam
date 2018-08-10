@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
         if (username == 'admin' && password == 'admin') {
             this.user.setUserLoggedIn();
-            this.router.navigate(['formView']);
+            this.router.navigate(['listViewAdmin']);
         } else if (username == 'employee' && password == '1') {
             this.user.setUserLoggedIn();
             this.router.navigate(['listView']);

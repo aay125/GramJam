@@ -19,6 +19,7 @@ import { Basic_infoFormComponent } from './components/basic_info-form/basic_info
 import { ListViewComponent } from './components/listView/listView.component';
 import { AppealFormComponent } from './components/appeal-form/appeal-form.component';
 import { SignatureComponent } from './components/signature/signature.component';
+import { ListViewAdminComponent } from './components/listViewAdmin/listViewAdmin.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { SignatureComponent } from './components/signature/signature.component';
         HomeComponent,
         PerformanceComponent,
         ListViewComponent,
+        ListViewAdminComponent,
         Basic_infoFormComponent,
         SignatureComponent
     ],
@@ -52,6 +54,7 @@ import { SignatureComponent } from './components/signature/signature.component';
             { path: 'formView', component: FormViewComponent },
             { path: 'forms', component: FormViewComponent },
             { path: 'listView', component: ListViewComponent },
+            { path: 'listViewAdmin', component: ListViewAdminComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],

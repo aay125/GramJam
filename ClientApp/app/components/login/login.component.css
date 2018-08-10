@@ -19,11 +19,11 @@ div.input {
     }
 
     div.input input {
-        padding: 10px 20px;
-        font-size: 25px;
+        padding: 10px 15px;
+        font-size: 15px;
         outline: 0;
     }
 
 div.input {
-    margin-top: 20px;
+    margin-top: 10px;
 }
