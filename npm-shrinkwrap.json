@@ -717,6 +717,11 @@
       "integrity": "sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=",
       "dev": true
     },
+    "angular-in-memory-web-api": {
+      "version": "0.2.1",
+      "resolved": "https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.2.1.tgz",
+      "integrity": "sha1-QBHGfuvNAqjhh0RyS9t9gipBfgw="
+    },
     "angular2-router-loader": {
       "version": "0.3.5",
       "resolved": "https://registry.npmjs.org/angular2-router-loader/-/angular2-router-loader-0.3.5.tgz",
