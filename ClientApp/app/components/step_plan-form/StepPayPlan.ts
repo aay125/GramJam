@@ -9,7 +9,6 @@
         public division = '',
         public reviewType = '',
         public sapNum = '',
-
         //sectionI
         public teamworkRating = '', //these rating should be from 1-3
         public integrityRating = '',
@@ -22,7 +21,7 @@
         //sectionIII
         public startDate = '',
         public endDate = '',
-        public goal = '',
+        public milestone = '', //changed from goal to milestone
         //sectionIV
         public raterComments = '',
         //sectionV

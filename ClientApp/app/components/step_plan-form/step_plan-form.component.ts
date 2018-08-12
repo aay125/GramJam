@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 import { StepPayPlan } from './StepPayPlan'; //our data model
 import { DateValidator } from '../../shared/DateValidation'; //import custom date validation from the shared folder
@@ -13,6 +13,16 @@ import { DateValidator } from '../../shared/DateValidation'; //import custom dat
 export class Step_planFormComponent implements OnInit {
     stepPayPlanForm: FormGroup; // root formgroup property
     stepModel: StepPayPlan = new StepPayPlan(); // data model
+
+    get entries(): FormArray {
+        return <FormArray>this.stepPayPlanForm.get('entries');
+    }
+
+    get goals(): FormArray {
+        return <FormArray>this.stepPayPlanForm.get('goals');
+    }
+
+   
 
     constructor(private fb: FormBuilder) { } // so we can inject the FormBuilder service
 
@@ -32,21 +42,14 @@ export class Step_planFormComponent implements OnInit {
             integrityRating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
             innovationRating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
             professionalismRating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
-            //sectionII
-            rating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
-            responsibility: ['', [Validators.required, Validators.minLength(3)]], //keep these general validators for now
-            summary: ['', [Validators.required, Validators.minLength(3)]],
-            //sectionIII
-            startDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], //using the custom date validator
-            endDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], 
-            goal: ['', [Validators.required, Validators.minLength(3)]],
+
             //sectionIV
             raterComments: ['', [Validators.required, Validators.minLength(3)]],
             //sectionV
             reviewerComments: ['', [Validators.required, Validators.minLength(3)]],
             employeeComments: ['', [Validators.required, Validators.minLength(3)]],
-            
-            //Signature section
+
+            //Signature section section VI
             supervisorSignature: ['', [Validators.required, Validators.minLength(3)]],
             supervisorDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
             supervisorSap: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]], //sap # have to be exactly 6 digits
@@ -54,8 +57,47 @@ export class Step_planFormComponent implements OnInit {
             officerDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
             officerSap: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]],
             employeeSignature: ['', [Validators.required, Validators.minLength(3)]],
-            employeeDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]]
-           
+            employeeDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]],
+
+            //sectionII
+            //rating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
+            //responsibility: ['', [Validators.required, Validators.minLength(3)]], //keep these general validators for now
+            //summary: ['', [Validators.required, Validators.minLength(3)]],
+
+            entries: this.fb.array([this.buildEntry()]), // using a form array instead so we can duplicate section II entries
+
+            //sectionIII
+            //startDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], //using the custom date validator
+            //endDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], 
+            //milestone: ['', [Validators.required, Validators.minLength(3)]],
+
+            goals: this.fb.array([this.buildGoal()])
+        });
+    }
+
+    addEntry(): void { //when you press the add button, it should duplicate another section II element
+        this.entries.push(this.buildEntry());
+    }
+
+    buildEntry(): FormGroup {
+        return this.fb.group({
+            //sectionII
+            rating: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
+            responsibility: ['', [Validators.required, Validators.minLength(3)]], //keep these general validators for now
+            summary: ['', [Validators.required, Validators.minLength(3)]],
+        });
+    }
+
+    addGoal(): void { 
+        this.entries.push(this.buildGoal());
+    }
+
+    buildGoal(): FormGroup {
+        return this.fb.group({
+            //sectionIII
+            startDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], //using the custom date validator
+            endDate: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), DateValidator.usDate]], 
+            milestone: ['', [Validators.required, Validators.minLength(3)]],
         });
     }
 
@@ -76,14 +118,17 @@ export class Step_planFormComponent implements OnInit {
             integrityRating: '3',
             innovationRating: '3',
             professionalismRating: '3',
+
             //Section II
             rating: '3', 
             responsibility: 'Example Responsibility Here',
             summary: 'Example Summary Here',
+
             //Section III
             startDate: '08/01/2018',
             endDate: '08/30/2018',
-            goal: 'Example Goal Here',
+            milestone: 'Example Goal Here',
+
             //Section IV
             raterComments: 'Example Comments Here',
             //Section V
