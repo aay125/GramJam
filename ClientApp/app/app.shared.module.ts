@@ -21,6 +21,10 @@ import { AppealFormComponent } from './components/appeal-form/appeal-form.compon
 import { SignatureComponent } from './components/signature/signature.component';
 import { ListViewAdminComponent } from './components/listViewAdmin/listViewAdmin.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ExecutiveFormData } from './data/executive-form.data';
+import { ExecutiveFormService } from './services/executive-form.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -46,20 +50,20 @@ import { ListViewAdminComponent } from './components/listViewAdmin/listViewAdmin
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'execute', component: ExecuteFormComponent},
+            { path: 'executive/:id', component: ExecuteFormComponent },
             { path: 'performance', component: PerformanceComponent },
             { path: 'step', component: Step_planFormComponent },
             { path: 'appeal', component: AppealFormComponent },
             { path: 'login', component: LoginComponent },
-            { path: 'formView', component: FormViewComponent },
             { path: 'forms', component: FormViewComponent },
             { path: 'listView', component: ListViewComponent },
             { path: 'listViewAdmin', component: ListViewAdminComponent },
             { path: '**', redirectTo: 'home' }
-        ])
+        ]),
+        InMemoryWebApiModule.forRoot(ExecutiveFormData),
     ],
 
-    providers: [UserService, AuthguardGuard]
+    providers: [UserService, AuthguardGuard, ExecutiveFormService]
 
 })
 export class AppModuleShared {
