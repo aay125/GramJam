@@ -1,11 +1,227 @@
 ﻿<div class="row">
     <div class="col-75">
-        <form class="container" [formGroup]="executiveForm">
+        <form class="container" (ngSubmit)="saveExecutiveForm()" [formGroup]="executiveForm">
             <h1 class="text-center">City of San Antonio</h1>
             <h2 class="text-center">Employee Performance Evaluation</h2>
             <h3 class="text-center pbot">Executive Level</h3>
             <div class="row">
-                <app-basic_info-form></app-basic_info-form>
+                <!--BASIC INFO SECTION-->
+                <!--FIRST ROW OF CONTENT-->
+                <div class="col-50">
+                    <!-- NAME FIELD -->
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (executiveForm.get('name')?.touched || executiveForm.get('name')?.dirty) && !executiveForm.get('name').valid }">
+                        <label class="control-label"
+                               for="nameId">
+                            Employee Name
+                        </label>
+                        <input class="form-control"
+                               id="nameId"
+                               type="text"
+                               placeholder="Full Name (required)"
+                               formControlName="name" />
+                        <span class="help-block" *ngIf="(executiveForm.get('name')?.touched || executiveForm.get('name')?.dirty) && executiveForm.get('name').errors">
+                            <span *ngIf="executiveForm.get('name').errors.required">
+                                Please enter your full name. <!--Error messages-->
+                            </span>
+                            <span *ngIf="executiveForm.get('name').errors.minlength">
+                                Name must be longer than 3 characters. <!--Error messages-->
+                            </span>
+                        </span>
+                    </div>
+                    <!-- TITLE FIELD -->
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (executiveForm.get('title')?.touched || executiveForm.get('title')?.dirty) && !executiveForm.get('title').valid }">
+                        <label class="control-label"
+                               for="titleId">
+                            Title
+                        </label>
+
+                        <input class="form-control"
+                               id="titleId"
+                               type="text"
+                               placeholder="Title (required)"
+                               formControlName="title" />
+                        <span class="help-block" *ngIf="(executiveForm.get('title')?.touched || executiveForm.get('title')?.dirty) && executiveForm.get('title').errors">
+                            <span *ngIf="executiveForm.get('title').errors.required">
+                                Please enter your title.
+                            </span>
+                            <span *ngIf="executiveForm.get('title').errors.minlength">
+                                Title must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                    <!--DEPARTMENT FIELD -->
+                    <!--<div class="form-group"
+             [ngClass]="{'has-error': (executiveForm.get('department')?.touched || executiveForm.get('department')?.dirty) && !executiveForm.get('department').valid }">
+            <label class="control-label"
+                   for="departmentId">
+                Department
+            </label>
+
+            <input class="form-control"
+                   id="departmentId"
+                   type="text"
+                   placeholder="Department (required)"
+                   formControlName="department" />
+            <span class="help-block" *ngIf="(executiveForm.get('department')?.touched || executiveForm.get('department')?.dirty) && executiveForm.get('department').errors">
+                <span *ngIf="executiveForm.get('department').errors.required">
+                    Please enter your department.
+                </span>
+                <span *ngIf="executiveForm.get('department').errors.minlength">
+                    Department must be longer than 3 characters.
+                </span>
+            </span>
+        </div>-->
+                    <label for="adr"><i class="fa fa-address-card-o"></i> Department:</label>
+                    <select class="form-control" id="sel1">
+                        <option></option>
+                        <option>Human Resources</option>
+                        <option>Library</option>
+                        <option>Information Technology</option>
+                    </select>
+                    <br>
+                    <label for="city"><i class="fa fa-institution"></i> Review Type:</label>
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="state">
+                                Planning
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-50">
+                            <label for="zip">
+                                Annual
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <label for="city"><i class="fa fa-institution"></i> Supervisor or Above? </label>
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="state">
+                                Yes
+                                <input type="radio" name="radio2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-50">
+                            <label for="zip">
+                                No
+                                <input type="radio" name="radio2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <!--REVIEW TYPE FIELD -->
+                    <!--<div class="form-group"
+             [ngClass]="{'has-error': (executiveForm.get('reviewType')?.touched || executiveForm.get('reviewType')?.dirty) && !executiveForm.get('reviewType').valid }">
+            <label class="control-label"
+                   for="reviewTypeId">
+                Review Type
+            </label>
+
+            <input class="form-control"
+                   id="reviewTypeId"
+                   type="text"
+                   placeholder="Review Type (required)"
+                   formControlName="reviewType" />
+            <span class="help-block" *ngIf="(executiveForm.get('reviewType')?.touched || executiveForm.get('reviewType')?.dirty) && executiveForm.get('reviewType').errors">
+                <span *ngIf="executiveForm.get('reviewType').errors.required">
+                    Please enter the review type.
+                </span>
+                <span *ngIf="executiveForm.get('reviewType').errors.minlength">
+                    Review type must be longer than 3 characters.
+                </span>
+            </span>
+        </div>-->
+                    <br>
+                </div>
+                <!--SECOND ROW OF CONTENT-->
+                <div class="col-50">
+                    <!-- SAP # FIELD -->
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (executiveForm.get('sapNum')?.touched || executiveForm.get('sapNum')?.dirty) && !executiveForm.get('sapNum').valid }">
+                        <label class="control-label"
+                               for="sapNumId">
+                            SAP #
+                        </label>
+                        <input class="form-control"
+                               id="sapNumId"
+                               type="text"
+                               placeholder="SAP # (required)"
+                               formControlName="sapNum" />
+                        <span class="help-block" *ngIf="(executiveForm.get('sapNum')?.touched || executiveForm.get('sapNum')?.dirty) && executiveForm.get('sapNum').errors">
+                            <span *ngIf="executiveForm.get('sapNum').errors.required">
+                                Please enter your SAP #.
+                            </span>
+                            <span *ngIf="executiveForm.get('sapNum').errors.minlength">
+                                SAP # must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                    <!--REPORTING PERIOD FIELD -->
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (executiveForm.get('period')?.touched || executiveForm.get('period')?.dirty) && !executiveForm.get('period').valid }">
+                        <label class="control-label"
+                               for="periodId">
+                            Reporting Period
+                        </label>
+                        <input class="form-control"
+                               id="periodId"
+                               type="text"
+                               placeholder="Reporting Period (required)"
+                               formControlName="period" />
+                        <span class="help-block" *ngIf="(executiveForm.get('period')?.touched || executiveForm.get('period')?.dirty) && executiveForm.get('period').errors">
+                            <span *ngIf="executiveForm.get('period').errors.required">
+                                Please enter the reporting period.
+                            </span>
+                            <span *ngIf="executiveForm.get('period').errors.minlength">
+                                Reporting period must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                    <!--DIVIOSION FIELD -->
+                    <div class="form-group"
+                         [ngClass]="{'has-error': (executiveForm.get('division')?.touched || executiveForm.get('division')?.dirty) && !executiveForm.get('division').valid }">
+                        <label class="control-label"
+                               for="divisionId">
+                            Division
+                        </label>
+                        <input class="form-control"
+                               id="divisionId"
+                               type="text"
+                               placeholder="Division (required)"
+                               formControlName="division" />
+                        <span class="help-block" *ngIf="(executiveForm.get('division')?.touched || executiveForm.get('division')?.dirty) && executiveForm.get('division').errors">
+                            <span *ngIf="executiveForm.get('division').errors.required">
+                                Please enter your division.
+                            </span>
+                            <span *ngIf="executiveForm.get('division').errors.minlength">
+                                Division must be longer than 3 characters.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!--BUTTON GROUP-->
+                <div class="container">
+                    <div class="form-group btgroup">
+                        <!--<button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!executiveForm.valid"
+                    (ngSubmit)="saveBasicInfo()">
+                Save
+            </button>-->
+                        <button class="btn btn-default"
+                                type="button"
+                                (click)="populateTestData()">
+                            Test Data
+                        </button>
+                    </div>
+                </div>
                 <div class="tcontent">
                     <!--RATING INSTRUCTIONS-->
                     <h4 style="font-weight: bold">Rating Descriptions</h4>
@@ -69,7 +285,7 @@
                                         <!--PERCENTAGE-->
                                         <td colspan="2">
                                             <div class="form-group row"
-                                                 [ngClass]="{'has-error': (executiveForm.get('percent')?.touched || executiveForm.get('percent')?.dirty) && !executiveForm.get('percent').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('twoPercent')?.touched || executiveForm.get('twoPercent')?.dirty) && !executiveForm.get('twoPercent').valid }">
                                                 <div class="col-50">
                                                     <label class="control-label"
                                                            attr.for="{{ 'percentId' + i }}">
@@ -80,13 +296,13 @@
                                                     <input class="input-sm"
                                                            id="{{ 'percentId' + i }}"
                                                            type="text"
-                                                           formControlName="percent" />
+                                                           formControlName="twoPercent" />
                                                 </div>
-                                                <span class="help-block" *ngIf="(executiveForm.get('percent')?.touched || executiveForm.get('percent')?.dirty) && executiveForm.get('percent').errors">
-                                                    <span *ngIf="executiveForm.get('percent').errors.required">
+                                                <span class="help-block" *ngIf="(executiveForm.get('twoPercent')?.touched || executiveForm.get('twoPercent')?.dirty) && executiveForm.get('twoPercent').errors">
+                                                    <span *ngIf="executiveForm.get('twoPercent').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('percent').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('twoPercent').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -96,7 +312,7 @@
                                         <!--RATING-->
                                         <td>
                                             <div class="form-group row"
-                                                 [ngClass]="{'has-error': (executiveForm.get('rating')?.touched || executiveForm.get('rating')?.dirty) && !executiveForm.get('rating').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('twoRating')?.touched || executiveForm.get('twoRating')?.dirty) && !executiveForm.get('twoRating').valid }">
                                                 <div class="col-50">
                                                     <label class="control-label"
                                                            attr.for="{{ 'ratingId' + i }}">
@@ -107,13 +323,13 @@
                                                     <input class="input-sm"
                                                            id="{{ 'ratingId' + i }}"
                                                            type="text"
-                                                           formControlName="rating" />
+                                                           formControlName="twoRating" />
                                                 </div>
-                                                <span class="help-block" *ngIf="(executiveForm.get('rating')?.touched || executiveForm.get('rating')?.dirty) && executiveForm.get('rating').errors">
-                                                    <span *ngIf="executiveForm.get('rating').errors.required">
+                                                <span class="help-block" *ngIf="(executiveForm.get('twoRating')?.touched || executiveForm.get('twoRating')?.dirty) && executiveForm.get('twoRating').errors">
+                                                    <span *ngIf="executiveForm.get('twoRating').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('rating').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('twoRating').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -122,14 +338,18 @@
                                         </td>
                                         <!--DELETE BUTTON-->
                                         <td>
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-danger"
+                                                    type="button"
+                                                    (click)="deleteEntry2()">
+                                                Delete
+                                            </button>
                                         </td>
                                     </tr>
                                     <!--RESPONSIBILITY/GOAL-->
                                     <tr>
                                         <td colspan="5">
                                             <div class="form-group"
-                                                 [ngClass]="{'has-error': (executiveForm.get('responsibility')?.touched || executiveForm.get('responsibility')?.dirty) && !executiveForm.get('responsibility').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('twoResponsibility')?.touched || executiveForm.get('twoResponsibility')?.dirty) && !executiveForm.get('twoResponsibility').valid }">
                                                 <label class="control-label"
                                                        attr.for="{{ 'responsibilityId' + i }}">
                                                     Responibility/Goal:
@@ -137,12 +357,12 @@
                                                 <textarea class="form-control"
                                                           id="{{ 'responsibilityId' + i }}"
                                                           type="text"
-                                                          formControlName="responsibility"></textarea>
-                                                <span class="help-block" *ngIf="(executiveForm.get('responsibility')?.touched || executiveForm.get('responsibility')?.dirty) && executiveForm.get('responsibility').errors">
-                                                    <span *ngIf="executiveForm.get('responsibility').errors.required">
+                                                          formControlName="twoResponsibility"></textarea>
+                                                <span class="help-block" *ngIf="(executiveForm.get('twoResponsibility')?.touched || executiveForm.get('twoResponsibility')?.dirty) && executiveForm.get('twoResponsibility').errors">
+                                                    <span *ngIf="executiveForm.get('twoResponsibility').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('responsibility').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('twoResponsibility').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -154,7 +374,7 @@
                                     <tr>
                                         <td colspan="5">
                                             <div class="form-group"
-                                                 [ngClass]="{'has-error': (executiveForm.get('summary')?.touched || executiveForm.get('summary')?.dirty) && !executiveForm.get('summary').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('twoSummary')?.touched || executiveForm.get('twoSummary')?.dirty) && !executiveForm.get('twoSummary').valid }">
                                                 <label class="control-label"
                                                        attr.for="{{ 'summaryId' + i }}">
                                                     Summary of actual performance results:
@@ -162,12 +382,12 @@
                                                 <textarea class="form-control"
                                                           id="{{ 'summaryId' + i }}"
                                                           type="text"
-                                                          formControlName="summary"></textarea>
-                                                <span class="help-block" *ngIf="(executiveForm.get('summary')?.touched || executiveForm.get('summary')?.dirty) && executiveForm.get('summary').errors">
-                                                    <span *ngIf="executiveForm.get('summary').errors.required">
+                                                          formControlName="twoSummary"></textarea>
+                                                <span class="help-block" *ngIf="(executiveForm.get('twoSummary')?.touched || executiveForm.get('twoSummary')?.dirty) && executiveForm.get('twoSummary').errors">
+                                                    <span *ngIf="executiveForm.get('twoSummary').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('summary').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('twoSummary').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -203,7 +423,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text"/>
+                                           type="text"
+                                           formControlName="teamworkRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -216,7 +437,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text"/>
+                                           type="text"
+                                           formControlName="integRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -229,7 +451,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text"/>
+                                           type="text"
+                                           formControlName="innovaRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -246,7 +469,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text"/>
+                                           type="text"
+                                           formControlName="profRating" />
                                 </td>
                             </tr>
                         </tbody>
@@ -274,7 +498,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text" />
+                                           type="text"
+                                           formControlName="ladRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -286,7 +511,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text" />
+                                           type="text"
+                                           formControlName="stratRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -299,7 +525,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text" />
+                                           type="text"
+                                           formControlName="excellenceRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -311,7 +538,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text" />
+                                           type="text"
+                                           formControlName="decisionRating" />
                                 </td>
                             </tr>
                             <tr>
@@ -321,7 +549,8 @@
                                 </td>
                                 <td>
                                     <input class="form-control"
-                                           type="text" />
+                                           type="text"
+                                           formControlName="pdpRating" />
                                 </td>
                             </tr>
                         </tbody>
@@ -343,7 +572,9 @@
                                                 <button class="btn btn-success"
                                                         type="button"
                                                         [disabled]="!section5.valid"
-                                                        (click)="addEntry5()">Add</button>
+                                                        (click)="addEntry5()">
+                                                    Add
+                                                </button>
                                             </div>
                                         </th>
                                     </tr>
@@ -354,7 +585,7 @@
                                         <!--TIME FRAME-->
                                         <td colspan="2">
                                             <div class="form-group row"
-                                                 [ngClass]="{'has-error': (executiveForm.get('time')?.touched || executiveForm.get('time')?.dirty) && !executiveForm.get('time').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('fiveTime')?.touched || executiveForm.get('fiveTime')?.dirty) && !executiveForm.get('fiveTime').valid }">
                                                 <div class="col-50">
                                                     <label class="control-label"
                                                            attr.for="{{ 'timeId' + i }}">
@@ -365,13 +596,13 @@
                                                     <input class="input-lg"
                                                            id="{{ 'timeId' + i }}"
                                                            type="text"
-                                                           formControlName="time" />
+                                                           formControlName="fiveTime" />
                                                 </div>
-                                                <span class="help-block" *ngIf="(executiveForm.get('time')?.touched || executiveForm.get('time')?.dirty) && executiveForm.get('time').errors">
-                                                    <span *ngIf="executiveForm.get('time').errors.required">
+                                                <span class="help-block" *ngIf="(executiveForm.get('fiveTime')?.touched || executiveForm.get('fiveTime')?.dirty) && executiveForm.get('fiveTime').errors">
+                                                    <span *ngIf="executiveForm.get('fiveTime').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('time').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('fiveTime').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -380,23 +611,27 @@
                                         </td>
                                         <!--DELETE BUTTON-->
                                         <td>
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-danger"
+                                                    type="button"
+                                                    (click)="deleteEntry5()">
+                                                Delete
+                                            </button>
                                         </td>
                                     </tr>
                                     <!--DESCRIPTION-->
                                     <tr>
                                         <td colspan="5">
                                             <div class="form-group"
-                                                 [ngClass]="{'has-error': (executiveForm.get('summary')?.touched || executiveForm.get('summary')?.dirty) && !executiveForm.get('summary').valid }">
+                                                 [ngClass]="{'has-error': (executiveForm.get('fiveSummary')?.touched || executiveForm.get('fiveSummary')?.dirty) && !executiveForm.get('fiveSummary').valid }">
                                                 <textarea class="form-control"
                                                           id="{{ 'summaryId' + i }}"
                                                           type="text"
-                                                          formControlName="summary"></textarea>
-                                                <span class="help-block" *ngIf="(executiveForm.get('summary')?.touched || executiveForm.get('summary')?.dirty) && executiveForm.get('summary').errors">
-                                                    <span *ngIf="executiveForm.get('summary').errors.required">
+                                                          formControlName="fiveSummary"></textarea>
+                                                <span class="help-block" *ngIf="(executiveForm.get('fiveSummary')?.touched || executiveForm.get('fiveSummary')?.dirty) && executiveForm.get('fiveSummary').errors">
+                                                    <span *ngIf="executiveForm.get('fiveSummary').errors.required">
                                                         Please enter your full name.
                                                     </span>
-                                                    <span *ngIf="executiveForm.get('summary').errors.minlength">
+                                                    <span *ngIf="executiveForm.get('fiveSummary').errors.minlength">
                                                         Name must be longer than 3 characters.
                                                     </span>
                                                 </span>
@@ -426,7 +661,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <textarea></textarea>
+                                    <textarea class="form-control"
+                                              type="text"
+                                              formControlName="sixSummary"></textarea>
                                 </td>
                             </tr>
                         </tbody>
@@ -444,7 +681,9 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <textarea></textarea>
+                                    <textarea class="form-control"
+                                              type="text"
+                                              formControlName="revComments"></textarea>
                                 </td>
                             </tr>
                         </tbody>
@@ -460,12 +699,20 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <textarea></textarea>
+                                    <textarea class="form-control"
+                                              type="text"
+                                              formControlName="employeeComments"></textarea>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <button class="btn btn-primary"
+                        type="submit"
+                        style="width:80px;margin-right:10px"
+                        [disabled]='!executiveForm.valid'>
+                    Save
+                </button>
                 <app-signature></app-signature>
             </div>
         </form>

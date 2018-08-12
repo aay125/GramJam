@@ -19,7 +19,7 @@ export class FormViewComponent implements OnInit {
     }
 
     goEx(): void {
-        this._router.navigate(['/execute']);
+        this._router.navigate(['/executive/0']);
     }
     goPerf(): void {
         this._router.navigate(['/performance']);
