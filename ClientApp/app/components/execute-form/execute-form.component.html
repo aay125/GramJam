@@ -206,22 +206,6 @@
                         </span>
                     </div>
                 </div>
-                <!--BUTTON GROUP-->
-                <div class="container">
-                    <div class="form-group btgroup">
-                        <!--<button class="btn btn-primary"
-                    type="submit"
-                    [disabled]="!executiveForm.valid"
-                    (ngSubmit)="saveBasicInfo()">
-                Save
-            </button>-->
-                        <button class="btn btn-default"
-                                type="button"
-                                (click)="populateTestData()">
-                            Test Data
-                        </button>
-                    </div>
-                </div>
                 <div class="tcontent">
                     <!--RATING INSTRUCTIONS-->
                     <h4 style="font-weight: bold">Rating Descriptions</h4>
@@ -707,13 +691,23 @@
                         </tbody>
                     </table>
                 </div>
-                <button class="btn btn-primary"
-                        type="submit"
-                        style="width:80px;margin-right:10px"
-                        [disabled]='!executiveForm.valid'>
-                    Save
-                </button>
                 <app-signature></app-signature>
+                <!--BUTTON GROUP-->
+                <div class="container">
+                    <div class="form-group btgroup">
+                        <button class="btn btn-primary"
+                                type="submit"
+                                style="width:80px;margin-right:10px"
+                                [disabled]='!executiveForm.valid'>
+                            Save
+                        </button>
+                        <button class="btn btn-default"
+                                type="button"
+                                (click)="populateTestData()">
+                            Test Data
+                        </button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
