@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import 'rxjs/add/operator/debounceTime';
@@ -10,6 +10,16 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { IExecutiveForm } from '../../interfaces/executive-form';
 import { ExecutiveFormService } from '../../services/executive-form.service';
+
+
+function ratingRange(min: number, max: number): ValidatorFn {
+    return (c: AbstractControl): { [key: string]: boolean } | null => {
+        if (c.value !== undefined && (isNaN(c.value) || c.value < min || c.value > max)) {
+            return { 'range': true };
+        };
+        return null;
+    };
+}
 
 @Component({
     selector: 'app-execute-form',
@@ -50,23 +60,23 @@ export class ExecuteFormComponent implements OnInit{
             //section2
             section2: this.fb.array([this.buildEntry2()]),
             //section 3
-            teamworkRating: ['', [Validators.required, Validators.minLength(3)]],
-            integRating: ['', [Validators.required, Validators.minLength(3)]],
-            innovaRating: ['', [Validators.required, Validators.minLength(3)]],
-            profRating: ['', [Validators.required, Validators.minLength(3)]],
+            teamworkRating: ['', ratingRange(1, 4)],
+            integRating: ['', ratingRange(1, 4)],
+            innovaRating: ['', ratingRange(1, 4)],
+            profRating: ['', ratingRange(1, 4)],
             //section 4
-            ladRating: ['', [Validators.required, Validators.minLength(3)]],
-            stratRating: ['', [Validators.required, Validators.minLength(3)]],
-            excellenceRating: ['', [Validators.required, Validators.minLength(3)]],
-            decisionRating: ['', [Validators.required, Validators.minLength(3)]],
-            pdpRating: ['', [Validators.required, Validators.minLength(3)]],
+            ladRating: ['', ratingRange(1, 4)],
+            stratRating: ['', ratingRange(1, 4)],
+            excellenceRating: ['', ratingRange(1, 4)],
+            decisionRating: ['', ratingRange(1, 4)],
+            pdpRating: ['', ratingRange(1, 4)],
             //section 5
             section5: this.fb.array([this.buildEntry5()]),
             //section 6
-            sixSummary: ['', [Validators.required, Validators.minLength(3)]],
+            sixSummary: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
             //section 7
-            revComments: ['', [Validators.required, Validators.minLength(3)]],
-            employeeComments: ['', [Validators.required, Validators.minLength(3)]],
+            revComments: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+            employeeComments: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
         });
 
         // Read the executive info from the route parameter
@@ -96,15 +106,15 @@ export class ExecuteFormComponent implements OnInit{
     buildEntry2(): FormGroup {
         return this.fb.group({
             twoPercent: ['', [Validators.required, Validators.minLength(3)]],
-            twoRating: ['', [Validators.required, Validators.minLength(3)]],
-            twoResponsibility: ['', [Validators.required, Validators.minLength(3)]],
-            twoSummary: ['', [Validators.required, Validators.minLength(3)]]
+            twoRating: ['', ratingRange(1, 4)],
+            twoResponsibility: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+            twoSummary: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
         });
     }
     buildEntry5(): FormGroup {
         return this.fb.group({
             fiveTime: ['', [Validators.required, Validators.minLength(3)]],
-            fiveSummary: ['', [Validators.required, Validators.minLength(3)]]
+            fiveSummary: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
         });
     }
     populateTestData(): void {
