@@ -42,7 +42,6 @@
                                                for="titleId">
                                             Title
                                         </label>
-
                                         <input class="form-control"
                                                id="titleId"
                                                type="text"
@@ -57,7 +56,6 @@
                                             </span>
                                         </span>
                                     </div>
-
                                     <!--DEPARTMENT FIELD -->
                                     <!--<div class="form-group"
                                          [ngClass]="{'has-error': (stepPayPlanForm.get('department')?.touched || stepPayPlanForm.get('department')?.dirty) && !stepPayPlanForm.get('department').valid }">
@@ -65,7 +63,6 @@
                                                for="departmentId">
                                             Department
                                         </label>
-
                                         <input class="form-control"
                                                id="departmentId"
                                                type="text"
@@ -429,245 +426,256 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <!-- Secttion II: Responsibilities, Goals... Block --> <!-- make this section reactive so you can add and delete Responsibilities/Goals -->
+                            <!-- Secttion II: Responsibilities, Goals... Block -->
                             <header style="font-weight: bold">Section II: Responsibilities, Goals, and Measures <span style="font-weight: normal">(70% of overall rating; equally weighted)</span></header>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th colspan="4">
-                                            Responsibilities, Goals, and Measures:
-                                            <span style="font-weight: normal">
-                                                <!-- this is sort of the reverse of what I did above to unbolden text -->
-                                                Each entry in this table contains 4 items: A description of the responsibility/goal that includes
-                                                any specific performance metric or project deadline; a specific weight percentage component; a summary of the actual performance
-                                                results; and the rating for this entry.
-                                            </span>
-                                        </th>
-                                        <!-- Add button -->
-                                        <th>
-                                            <button class="btn btn-success"
-                                                    type="button"
-                                                    [disabled]="!stepPayPlanForm.valid">
-                                                Add
-                                            </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Entry: 1</td>
-                                        <!--rating-->
-                                        <td colspan="3">
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('rating')?.touched || stepPayPlanForm.get('rating')?.dirty) && !stepPayPlanForm.get('rating').valid }">
-
-                                                <label class="control-label"
-                                                       for="ratingId">
-                                                    Rating:
-                                                </label>
-                                                <input class="form-control"
-                                                       id="ratingId"
-                                                       type="text"
-                                                       placeholder="1-3"
-                                                       formControlName="rating" />
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('rating')?.touched || stepPayPlanForm.get('rating')?.dirty) && stepPayPlanForm.get('rating').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('rating').errors.required">
-                                                        Please enter a rating from 1-3 <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                            <div formArrayName="entries" *ngFor="let entry of entries.controls; let i=index">
+                                <div [formGroupName]="i">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4">
+                                                    Responsibilities, Goals, and Measures:
+                                                    <span style="font-weight: normal">
+                                                        <!-- this is sort of the reverse of what I did above to unbolden text -->
+                                                        Each entry in this table contains 4 items: A description of the responsibility/goal that includes
+                                                        any specific performance metric or project deadline; a specific weight percentage component; a summary of the actual performance
+                                                        results; and the rating for this entry.
                                                     </span>
-                                                    <span *ngIf="stepPayPlanForm.get('rating').errors.min">
-                                                        Rating must not be lower than 1 <!--Error messages-->
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('rating').errors.max">
-                                                        Rating must not be greater than 3 <!--Error messages-->
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <!--Delete Button-->
-                                        <td>
-                                            <button class="btn btn-danger"
-                                                    type="button"
-                                                    [disabled]="!stepPayPlanForm.valid">
-                                                <!--I'm really sure what this line should be-->
-                                                Delete
-                                            </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
-                                        </td>
-                                    </tr>
-                                    <!--responsibility--> <!-- How can I make the input text box bigger?-->
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('responsibility')?.touched || stepPayPlanForm.get('responsibility')?.dirty) && !stepPayPlanForm.get('responsibility').valid }">
-                                                <label class="control-label"
-                                                       for="responsibilityId">
-                                                    Responsibility/Goal:
-                                                </label>
-                                                <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
-                                                <textarea class="form-control"
-                                                          id="responsibilityId"
-                                                          type="text"
-                                                          placeholder="Enter a Responsibility or Goal"
-                                                          formControlName="responsibility"></textarea>
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('responsibility')?.touched || stepPayPlanForm.get('responsibility')?.dirty) && stepPayPlanForm.get('responsibility').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('responsibility').errors.required">
-                                                        Please enter a responsibility or a goal. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('responsibility').errors.minlength">
-                                                        <!--NOTE: pay close attention to each form control's validators-->
-                                                        Please enter at least 3 characters. <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <!--summary--> <!--same issues as above with responsibility-->
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('summary')?.touched || stepPayPlanForm.get('summary')?.dirty) && !stepPayPlanForm.get('summary').valid }">
-                                                <label class="control-label"
-                                                       for="summaryId">
-                                                    Summary of actual performance results:
-                                                </label>
-                                                <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
-                                                <textarea class="form-control"
-                                                          id="summaryId"
-                                                          type="text"
-                                                          placeholder="Enter a Summary of the Actual Performance Results"
-                                                          formControlName="summary"></textarea>
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('summary')?.touched || stepPayPlanForm.get('summary')?.dirty) && stepPayPlanForm.get('summary').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('summary').errors.required">
-                                                        Please enter performance summary. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('summary').errors.minlength">
-                                                        <!--NOTE: pay close attention to each form control's validators-->
-                                                        Please enter at least 3 characters <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                                </th>
+                                                <!-- Add button -->
+                                                <th>
+                                                    <button class="btn btn-success"
+                                                            type="button"
+                                                            (click)="addEntry()">
+                                                        <!-- This Add button in Section II should now be connected to the addEntry() Fucntion in the step...form.component.ts -->
+                                                        <!-- [disabled]="!addEntry.valid" (Something in my validation is broken so it won't duplicate section II)-->
+                                                        Add
+                                                    </button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <!-- Everything in the tbody can be duplicated with the FormArray -->
+                                        <tbody>
+                                            <tr>
+                                                <td>{{'Entry: ' + i}}</td> <!-- check for a better way to change the Entry lables, maybe just don't -->
+                                                <!--rating-->
+                                                <td colspan="3">
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (entry.controls.rating.touched || entry.controls.rating.dirty) && !entry.controls.rating.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'ratingId' + i}}">
+                                                            <!-- Note: since we're now using form arrays to duplicate the input elements in section II, we need to dynamically change the element's id by adding i(index) -->
+                                                            Rating:
+                                                        </label>
+                                                        <input class="form-control"
+                                                               id="{{'ratingId' + i}}"
+                                                               type="text"
+                                                               placeholder="1-3"
+                                                               formControlName="rating" />
+                                                        <span class="help-block" *ngIf="(entry.controls.rating.touched || entry.controls.rating.dirty) && entry.controls.rating.errors">
+                                                            <!-- Note: since you're using these formcontrols in a formArray now, you no longer access them the same way -->
+                                                            <span *ngIf="entry.controls.rating.errors.required">
+                                                                Please enter a rating from 1-3
+                                                            </span>
+                                                            <span *ngIf="entry.controls.rating.errors.min">
+                                                                Rating must not be lower than 1 <!--Error messages-->
+                                                            </span>
+                                                            <span *ngIf="entry.controls.rating.errors.max">
+                                                                Rating must not be greater than 3 <!--Error messages-->
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <!--Delete Button-->
+                                                <td>
+                                                    <button class="btn btn-danger"
+                                                            type="button"
+                                                            [disabled]="!stepPayPlanForm.valid">
+                                                        <!--I'm really sure what this line should be-->
+                                                        Delete
+                                                    </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
+                                                </td>
+                                            </tr>
+                                            <!--responsibility--> <!-- How can I make the input text box bigger?-->
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (entry.controls.responsibility.touched || entry.controls.responsibility.dirty) && !entry.controls.responsibility.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'responsibilityId' + i}}">
+                                                            Responsibility/Goal:
+                                                        </label>
+                                                        <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
+                                                        <textarea class="form-control"
+                                                                  id="{{'responsibilityId' + i}}"
+                                                                  type="text"
+                                                                  placeholder="Enter a Responsibility or Goal"
+                                                                  formControlName="responsibility"></textarea>
+                                                        <span class="help-block" *ngIf="(entry.controls.responsibility.touched || entry.controls.responsibility.dirty) && entry.controls.responsibility.errors">
+                                                            <span *ngIf="entry.controls.responsibility.errors.required">
+                                                                Please enter a responsibility or a goal. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                            </span>
+                                                            <span *ngIf="entry.controls.responsibility.errors.minlength">
+                                                                <!--NOTE: pay close attention to each form control's validators-->
+                                                                Please enter at least 3 characters. <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!--summary--> <!--same issues as above with responsibility-->
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (entry.controls.summary.touched || entry.controls.summary.dirty) && !entry.controls.summary.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'summaryId' + i}}">
+                                                            Summary of actual performance results:
+                                                        </label>
+                                                        <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
+                                                        <textarea class="form-control"
+                                                                  id="{{'summaryId' + i}}"
+                                                                  type="text"
+                                                                  placeholder="Enter a Summary of the Actual Performance Results"
+                                                                  formControlName="summary"></textarea>
+                                                        <span class="help-block" *ngIf="(entry.controls.summary.touched || entry.controls.summary.dirty) && entry.controls.summary.errors">
+                                                            <span *ngIf="entry.controls.summary.errors.required">
+                                                                Please enter performance summary. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                            </span>
+                                                            <span *ngIf="entry.controls.summary.errors.minlength">
+                                                                <!--NOTE: pay close attention to each form control's validators-->
+                                                                Please enter at least 3 characters <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- NOTE: I don't know how to add the formArray inside the tbody using the <div> tags since  they're not allowed inside the table -->
+                            </div>
                             <!-- Secttion III: Professional Development Plan... Block -->
                             <header style="font-weight: bold">Section III: Professional Development Plan</header>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th colspan="4">
-                                            Goals and Milestones:
-                                            <span style="font-weight: normal">
-                                                <!-- this is sort of the reverse of what I did above to unbolden text -->
-                                                Each entry in this table contains 4 items: A description of the responsibility/goal that includes
-                                                any specific performance metric or project deadline; a specific weight percentage component; a summary of the actual performance
-                                                results; and the rating for this entry.
-                                            </span>
-                                        </th>
-                                        <!-- Add button -->
-                                        <th>
-                                            <button class="btn btn-success"
-                                                    type="button"
-                                                    [disabled]="!stepPayPlanForm.valid">
-                                                Add
-                                            </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2">Goal: 1</td>
-                                        <!--startDate-->
-                                        <td>
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('startDate')?.touched || stepPayPlanForm.get('startDate')?.dirty) && !stepPayPlanForm.get('startDate').valid }">
-
-                                                <label class="control-label"
-                                                       for="startDateId">
-                                                    Start Date:
-                                                </label>
-                                                <input class="form-control"
-                                                       id="startDateId"
-                                                       type="text"
-                                                       placeholder="mm/dd/yyyy"
-                                                       formControlName="startDate" />
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('startDate')?.touched || stepPayPlanForm.get('startDate')?.dirty) && stepPayPlanForm.get('startDate').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('startDate').errors.required">
-                                                        Please enter a start date.
+                            <div formArrayName="goals" *ngFor="let goal of goals.controls; let i=index">
+                                <div [formGroupName]="i">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4">
+                                                    Goals and Milestones:
+                                                    <span style="font-weight: normal">
+                                                        <!-- this is sort of the reverse of what I did above to unbolden text -->
+                                                        Each entry in this table contains 4 items: A description of the responsibility/goal that includes
+                                                        any specific performance metric or project deadline; a specific weight percentage component; a summary of the actual performance
+                                                        results; and the rating for this entry.
                                                     </span>
-                                                    <span *ngIf="stepPayPlanForm.get('startDate').errors.minlength">
-                                                        Too few characters, please use the following format: mm/dd/yyyy
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('startDate').errors.maxlength">
-                                                        Too many characters, please use the following format: mm/dd/yyyy
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <!--endDate-->
-                                        <td>
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('endDate')?.touched || stepPayPlanForm.get('endDate')?.dirty) && !stepPayPlanForm.get('endDate').valid }">
-                                                <label class="control-label"
-                                                       for="endDateId">
-                                                    End Date:
-                                                </label>
-                                                <input class="form-control"
-                                                       id="endDateId"
-                                                       type="text"
-                                                       placeholder="mm/dd/yyyy"
-                                                       formControlName="endDate" />
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('endDate')?.touched || stepPayPlanForm.get('endDate')?.dirty) && stepPayPlanForm.get('endDate').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('endDate').errors.required">
-                                                        Please enter an end date.
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('endDate').errors.minlength">
-                                                        Too few characters, please use the following format: mm/dd/yyyy
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('endDate').errors.maxlength">
-                                                        Too many characters, please use the following format: mm/dd/yyyy
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <!--Delete Button-->
-                                        <td>
-                                            <button class="btn btn-danger"
-                                                    type="button"
-                                                    [disabled]="!stepPayPlanForm.valid">
-                                                <!--I'm really sure what this line should be-->
-                                                Delete
-                                            </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
-                                        </td>
-                                    </tr>
-                                    <!--goal--> <!--you could use this in conjunction with another <td></td> to make this into a single line.-->
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="form-group"
-                                                 [ngClass]="{'has-error': (stepPayPlanForm.get('goal')?.touched || stepPayPlanForm.get('goal')?.dirty) && !stepPayPlanForm.get('goal').valid }">
-                                                <label class="control-label"
-                                                       for="goalId">
-                                                </label>
-                                                <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
-                                                <textarea class="form-control"
-                                                          id="goalId"
-                                                          type="text"
-                                                          placeholder="Enter a Goal"
-                                                          formControlName="goal"></textarea>
-                                                <span class="help-block" *ngIf="(stepPayPlanForm.get('goal')?.touched || stepPayPlanForm.get('goal')?.dirty) && stepPayPlanForm.get('goal').errors">
-                                                    <span *ngIf="stepPayPlanForm.get('goal').errors.required">
-                                                        Please enter a Goal. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
-                                                    </span>
-                                                    <span *ngIf="stepPayPlanForm.get('goal').errors.minlength">
-                                                        <!--NOTE: pay close attention to each form control's validators-->
-                                                        Please enter at least 3 characters. <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                                </th>
+                                                <!-- Add button -->
+                                                <th>
+                                                    <button class="btn btn-success"
+                                                            type="button"
+                                                            (click)="addGoal()">
+                                                        <!-- [disabled]="!stepPayPlanForm.valid" -->
+                                                        Add Goal
+                                                    </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2">{{'Goal: ' + i}}</td>
+                                                <!--startDate-->
+                                                <td>
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (goal.controls.startDate.touched || goal.controls.startDate.dirty) && !goal.controls.startDate.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'startDateId' + i}}">
+                                                            Start Date:
+                                                        </label>
+                                                        <input class="form-control"
+                                                               id="{{'startDateId' + i}}"
+                                                               type="text"
+                                                               placeholder="mm/dd/yyyy"
+                                                               formControlName="startDate" />
+                                                        <span class="help-block" *ngIf="(goal.controls.startDate.touched || goal.controls.startDate.dirty) && goal.controls.startDate.errors">
+                                                            <span *ngIf="goal.controls.startDate.errors.required">
+                                                                Please enter a start date.
+                                                            </span>
+                                                            <span *ngIf="goal.controls.startDate.errors.minlength">
+                                                                Too few characters, please use the following format: mm/dd/yyyy
+                                                            </span>
+                                                            <span *ngIf="goal.controls.startDate.errors.maxlength">
+                                                                Too many characters, please use the following format: mm/dd/yyyy
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <!--endDate-->
+                                                <td>
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (goal.controls.endDate.touched || goal.controls.endDate.dirty) && !goal.controls.endDate.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'endDateId' + i}}">
+                                                            End Date:
+                                                        </label>
+                                                        <input class="form-control"
+                                                               id="{{'endDateId' + i}}"
+                                                               type="text"
+                                                               placeholder="mm/dd/yyyy"
+                                                               formControlName="endDate" />
+                                                        <span class="help-block" *ngIf="(goal.controls.endDate.touched || goal.controls.endDate.dirty) && goal.controls.endDate.errors">
+                                                            <span *ngIf="goal.controls.endDate.errors.required">
+                                                                Please enter an end date.
+                                                            </span>
+                                                            <span *ngIf="goal.controls.endDate.errors.minlength">
+                                                                Too few characters, please use the following format: mm/dd/yyyy
+                                                            </span>
+                                                            <span *ngIf="goal.controls.endDate.errors.maxlength">
+                                                                Too many characters, please use the following format: mm/dd/yyyy
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <!--Delete Button-->
+                                                <td>
+                                                    <button class="btn btn-danger"
+                                                            type="button"
+                                                            [disabled]="!stepPayPlanForm.valid">
+                                                        <!--I'm really sure what this line should be-->
+                                                        Delete
+                                                    </button> <!--NOTE: I don't know how to button yet, (Buttons are mock buttons for now)-->
+                                                </td>
+                                            </tr>
+                                            <!--milestone-->
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div class="form-group"
+                                                         [ngClass]="{'has-error': (goal.controls.milestone.touched || goal.controls.milestone.dirty) && !goal.controls.milestone.valid }">
+                                                        <label class="control-label"
+                                                               attr.for="{{'milestoneId' + i}}">
+                                                        </label>
+                                                        <!-- this is the paragraoh tag right? will it do anything in this case?--> <!-- NOTE: (Look up description box in the tutorial) -->
+                                                        <textarea class="form-control"
+                                                                  id="{{'milestoneId' + i}}"
+                                                                  type="text"
+                                                                  placeholder="Enter a Goal"
+                                                                  formControlName="milestone"></textarea>
+                                                        <span class="help-block" *ngIf="(goal.controls.milestone.touched || goal.controls.milestone.dirty) && goal.controls.milestone.errors">
+                                                            <span *ngIf="goal.controls.milestone.errors.required">
+                                                                Please enter a Goal. <!--Error messages--> <!-- NOTE: these warning aren't appearing -->
+                                                            </span>
+                                                            <span *ngIf="goal.controls.milestone.errors.minlength">
+                                                                <!--NOTE: pay close attention to each form control's validators-->
+                                                                Please enter at least 3 characters. <!--Error messages--> <!--Note: this message won't appear (look the the tutorial to fix this)-->
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <!-- Section IV: Narrative Summary and Assessment Block -->
                             <header style="font-weight: bold">Section IV: Narrative Summary and Assessment</header>
                             <table class="table table-bordered">
@@ -1078,3 +1086,16 @@
         </div>
     </div>
 </div>
+<br>Dirty: {{ stepPayPlanForm.dirty }}
+<br>Touched: {{ stepPayPlanForm.touched }}
+<br>Valid: {{ stepPayPlanForm.valid }}
+<br>Value: {{ stepPayPlanForm.value | json }}
+<!--Section II-->
+<br>rating: {{ entries.get('0.rating')?.value }}
+<br>responsibility: {{ entries.get('0.responsibility')?.value }}
+<br>summary: {{ entries.get('0.summary')?.value }}
+<!--Section III-->
+<br>startDate: {{ goals.get('0.startDate')?.value }}
+<br>endDate: {{ goals.get('0.endDate')?.value }}
+<br>milestone: {{ goals.get('0.milestone')?.value }}
+<br>&nbsp;
